@@ -1,15 +1,17 @@
 # yari_react
 
-1. La diferencia entre un componente UI y un functional component, esta en que el functional component ademas de renderizar jsx maneja la logica y ek estado. mientras que el componente de UI es solo presentacional, y se usan las props tambien
+1. La diferencia entre un componente UI y un functional component, esta en que el functional component ademas de renderizar jsx maneja la logica y el estado. mientras que el componente de UI es solo presentacional, y se usan las props tambien
 
 ```javascript
 import React from "react";
+import React, { useState } from "react";
 
 const Saludo = ({ nombre }) => {
+const [info, setInfo] = useState("");
   return (
     <div>
       <h1>¡Hola, {nombre}!</h1>
-      <p>Bienvenido/a a nuestra aplicación.</p>
+      <p>Bienvenido/a a nuestra aplicación. <button onClick={()=>setInfo("Nueva info")}>cambiar parrafo</button></p>
     </div>
   );
 };
